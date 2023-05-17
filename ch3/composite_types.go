@@ -23,4 +23,33 @@ func main() {
 	runes := []rune(message)
 	fmt.Println(runes[3])
 	fmt.Println(string(runes[3]))
+
+	fmt.Println("----- 3.3 -----")
+
+	type Employee struct {
+		firstName string
+		lastName  string
+		id        int
+	}
+
+	alice := Employee{
+		"Alice",
+		"Smith",
+		1,
+	}
+
+	bob := Employee{
+		firstName: "Bob",
+		lastName:  "Green",
+		id:        2,
+	}
+
+	var abby Employee
+	abby.firstName = "Abby"
+	abby.lastName = "Deng"
+	abby.id = 519
+
+	fmt.Println(alice)
+	fmt.Println(bob)
+	fmt.Println(abby)
 }
