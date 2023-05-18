@@ -14,4 +14,19 @@ func main() {
 	}
 	fmt.Println(len(randoms))
 	fmt.Println(randoms)
+
+	fmt.Println("----- 4.2 -----")
+
+	for _, num := range randoms {
+		switch {
+		case num%2 == 0 && num%3 == 0:
+			fmt.Println("Six!")
+		case num%2 == 0:
+			fmt.Println("Two!")
+		case num%3 == 0:
+			fmt.Println("Three!")
+		default:
+			fmt.Println("Never mind")
+		}
+	}
 }
