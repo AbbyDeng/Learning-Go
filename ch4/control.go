@@ -29,4 +29,13 @@ func main() {
 			fmt.Println("Never mind")
 		}
 	}
+
+	fmt.Println("----- 4.3 -----")
+
+	var total int
+	for i := 0; i < 10; i++ {
+		total := total + i // this total declared in for shadows the one declared on line 35
+		fmt.Println(total)
+	}
+	fmt.Println(total) // this total is the one declared on line 35, which is 0
 }
