@@ -20,11 +20,11 @@ func main() {
 	for _, num := range randoms {
 		switch {
 		case num%2 == 0 && num%3 == 0:
-			fmt.Println("Six!")
+			fmt.Printf("%d Six!\n", num)
 		case num%2 == 0:
-			fmt.Println("Two!")
+			fmt.Printf("%d Two!\n", num)
 		case num%3 == 0:
-			fmt.Println("Three!")
+			fmt.Printf("%d Three!\n", num)
 		default:
 			fmt.Println("Never mind")
 		}
