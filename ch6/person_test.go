@@ -5,12 +5,12 @@ import (
 )
 
 func TestMakePersonSlice(t *testing.T) {
-	people := [10_000_000]Person{}
-	for i, _ := range people {
-		people[i] = Person{
+	people := make([]Person, 0, 10_000_000)
+	for i := 0; i < 10_000_000; i++ {
+		people = append(people, Person{
 			FirstName: "Abby",
 			LastName:  "Deng",
 			Age:       19,
-		}
+		})
 	}
 }
