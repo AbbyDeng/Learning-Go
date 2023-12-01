@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"sync"
 )
 
@@ -86,6 +87,19 @@ func twoGoroutines() {
 	}
 }
 
+// ----- 12.3 -----
+
+func buildSquareRootMap() map[int]float64 {
+	out := make(map[int]float64, 100_000)
+	for i := 0; i < 100_000; i++ {
+		out[i] = math.Sqrt(float64(i))
+	}
+
+	return out
+}
+
+var squareRootMapCache = sync.OnceValue(buildSquareRootMap)
+
 func main() {
 	// ----- 12.1 -----
 	fmt.Println("----- 12.1 -----")
@@ -95,4 +109,9 @@ func main() {
 	// ----- 12.2 -----
 	fmt.Println("----- 12.2 -----")
 	twoGoroutines()
+
+	// ----- 12.3 -----
+	for i := 0; i < 100_000; i += 1_000 {
+		fmt.Println(i, " ", squareRootMapCache()[i])
+	}
 }
